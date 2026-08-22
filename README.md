@@ -2,8 +2,7 @@
   <a href="https://octopusapm.com/">
     <img src="frontend/public/logo.png" alt="Octopus APM Logo" height="120" />
   </a>
-
-  # 🐙 Octopus Tomcat APM
+  <br />
 
   ![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED)
   ![Docker Image Version](https://img.shields.io/docker/v/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker)
