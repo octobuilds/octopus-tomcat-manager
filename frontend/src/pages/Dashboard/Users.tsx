@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, MoreVertical, Search, Shield, Mail, X, Copy, Check } from 'lucide-react';
@@ -40,10 +41,10 @@ const Users: React.FC = () => {
       if (data.success) {
         setInviteLink(`http://localhost:5173/#/invite/${data.token}`);
       } else {
-        alert(data.message || 'Davet oluşturulamadı.');
+        toast.error(data.message || 'Davet oluşturulamadı.');
       }
     } catch (error) {
-      alert('Sunucuya ulaşılamadı.');
+      toast.error('Sunucuya ulaşılamadı.');
     }
     setLoading(false);
   };
@@ -62,10 +63,10 @@ const Users: React.FC = () => {
         setUsers(users.map(u => u.id === editingUser.id ? { ...u, role: editRole } : u));
         setEditingUser(null);
       } else {
-        alert(data.message || 'Rol güncellenemedi.');
+        toast.error(data.message || 'Rol güncellenemedi.');
       }
     } catch (error) {
-      alert('Sunucuya ulaşılamadı.');
+      toast.error('Sunucuya ulaşılamadı.');
     }
     setLoading(false);
   };
@@ -79,10 +80,10 @@ const Users: React.FC = () => {
         setUsers(users.filter(u => u.id !== id));
         fetchLimits();
       } else {
-        alert(data.message || 'Silinemedi.');
+        toast.error(data.message || 'Silinemedi.');
       }
     } catch (e) {
-      alert('Hata oluştu.');
+      toast.error('Hata oluştu.');
     }
   };
 

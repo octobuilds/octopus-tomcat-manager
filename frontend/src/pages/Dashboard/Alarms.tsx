@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bell, Plus, Edit, Trash, X, Check, Activity, Search } from 'lucide-react';
@@ -131,7 +132,7 @@ const Alarms: React.FC = () => {
 
   const handleSave = async () => {
     if (!name || threshold === '') {
-      alert('Lütfen zorunlu alanları doldurun');
+      toast.error('Lütfen zorunlu alanları doldurun');
       return;
     }
 
@@ -166,10 +167,10 @@ const Alarms: React.FC = () => {
         fetchAlarms();
         fetchLimits();
       } else {
-        alert(data.message);
+        toast.error(data.message);
       }
     } catch (e) {
-      alert('Hata oluştu');
+      toast.error('Hata oluştu');
     }
   };
 

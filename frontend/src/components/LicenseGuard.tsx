@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useEffect, useState } from 'react';
 import { ShieldAlert, Key } from 'lucide-react';
 import '../layouts/Dashboard.css';
@@ -63,10 +64,10 @@ const LicenseGuard: React.FC<LicenseGuardProps> = ({ children }) => {
       if (data.success) {
         window.location.reload();
       } else {
-        alert('Hata: ' + data.message);
+        toast.error('Hata: ' + data.message);
       }
     } catch (err) {
-      alert('Sunucu hatası.');
+      toast.error('Sunucu hatası.');
     }
     setSubmitting(false);
   };

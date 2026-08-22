@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter as BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import SetupWizard from './components/SetupWizard';
 import SidebarLayout from './layouts/SidebarLayout';
 import Overview from './pages/Dashboard/Overview';
@@ -83,6 +84,16 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Toaster 
+        position="top-right" 
+        toastOptions={{
+          style: {
+            background: 'var(--bg-secondary)',
+            color: 'var(--text-main)',
+            border: '1px solid var(--border-color)'
+          }
+        }} 
+      />
       <AuditLogger />
       <Routes>
         <Route path="/setup" element={isSetupComplete ? <Navigate to={isAuth ? "/" : "/login"} replace /> : <SetupWizard />} />

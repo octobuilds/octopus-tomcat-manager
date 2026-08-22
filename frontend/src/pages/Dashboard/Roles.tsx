@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Plus, Shield, MoreVertical, X, Check, Trash } from 'lucide-react';
@@ -95,10 +96,10 @@ const Roles: React.FC = () => {
         setShowModal(false);
         fetchRoles();
       } else {
-        alert(data.message);
+        toast.error(data.message);
       }
     } catch (e) {
-      alert('Sunucu hatası');
+      toast.error('Sunucu hatası');
     }
   };
 
@@ -110,10 +111,10 @@ const Roles: React.FC = () => {
       if (data.success) {
         fetchRoles();
       } else {
-        alert(data.message);
+        toast.error(data.message);
       }
     } catch (e) {
-      alert('Sunucu hatası');
+      toast.error('Sunucu hatası');
     }
   };
 

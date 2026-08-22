@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { User, Bell, Shield, Globe, Monitor, Clock, Mail, Key } from 'lucide-react';
@@ -91,22 +92,22 @@ const Settings: React.FC = () => {
       });
       const data = await res.json();
       if (data.success) {
-        alert(data.message || 'SMTP ayarları kaydedildi!');
+        toast.success(data.message || 'SMTP ayarları kaydedildi!');
       } else {
-        alert('Hata: ' + data.message);
+        toast.error('Hata: ' + data.message);
       }
     } catch (e) {
-      alert('Ayarlar kaydedilirken hata oluştu');
+      toast.error('Ayarlar kaydedilirken hata oluştu');
     }
   };
 
   const handlePasswordChange = async () => {
     if (!currentPassword || !newPassword || !confirmPassword) {
-      alert('Lütfen tüm alanları doldurun.');
+      toast.error('Lütfen tüm alanları doldurun.');
       return;
     }
     if (newPassword !== confirmPassword) {
-      alert('Yeni şifreler eşleşmiyor.');
+      toast.error('Yeni şifreler eşleşmiyor.');
       return;
     }
 
@@ -121,15 +122,15 @@ const Settings: React.FC = () => {
       });
       const data = await res.json();
       if (data.success) {
-        alert(data.message || 'Şifreniz başarıyla güncellendi!');
+        toast.success(data.message || 'Şifreniz başarıyla güncellendi!');
         setCurrentPassword('');
         setNewPassword('');
         setConfirmPassword('');
       } else {
-        alert('Hata: ' + data.message);
+        toast.error('Hata: ' + data.message);
       }
     } catch (e) {
-      alert('Şifre değiştirilirken hata oluştu');
+      toast.error('Şifre değiştirilirken hata oluştu');
     }
   };
 
@@ -145,10 +146,10 @@ const Settings: React.FC = () => {
         setTwoFaSetupSecret(data.secret);
         setShow2FAModal(true);
       } else {
-        alert("2FA oluşturulamadı: " + data.message);
+        toast.error("2FA oluşturulamadı: " + data.message);
       }
     } catch(e) {
-      alert("Hata oluştu.");
+      toast.error("Hata oluştu.");
     }
   };
 
@@ -164,14 +165,14 @@ const Settings: React.FC = () => {
       });
       const data = await res.json();
       if(data.success) {
-        alert("2FA başarıyla aktifleştirildi!");
+        toast.success("2FA başarıyla aktifleştirildi!");
         setShow2FAModal(false);
         setIs2FAEnabled(true);
       } else {
-        alert("Kod yanlış: " + data.message);
+        toast.error("Kod yanlış: " + data.message);
       }
     } catch(e) {
-      alert("Hata oluştu.");
+      toast.error("Hata oluştu.");
     }
   };
 
@@ -189,13 +190,13 @@ const Settings: React.FC = () => {
       });
       const data = await res.json();
       if(data.success) {
-        alert("2FA devre dışı bırakıldı.");
+        toast.error("2FA devre dışı bırakıldı.");
         setIs2FAEnabled(false);
       } else {
-        alert("Hata: " + data.message);
+        toast.error("Hata: " + data.message);
       }
     } catch(e) {
-      alert("Hata oluştu.");
+      toast.error("Hata oluştu.");
     }
   };
 
@@ -209,12 +210,12 @@ const Settings: React.FC = () => {
         const data = await res.json();
         if (data.success) {
           setSessions(prev => prev.filter(s => s.id !== id));
-          alert('Oturum başarıyla sonlandırıldı.');
+          toast.success('Oturum başarıyla sonlandırıldı.');
         } else {
-          alert("Hata: " + data.message);
+          toast.error("Hata: " + data.message);
         }
       } catch(e) {
-        alert("Hata oluştu.");
+        toast.error("Hata oluştu.");
       }
     }
   };

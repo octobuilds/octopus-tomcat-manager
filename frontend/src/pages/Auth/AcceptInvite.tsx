@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Shield, Key, User, Check, AlertTriangle } from 'lucide-react';
@@ -37,11 +38,11 @@ const AcceptInvite: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== passwordConfirm) {
-      alert('Şifreler eşleşmiyor!');
+      toast.error('Şifreler eşleşmiyor!');
       return;
     }
     if (!name || password.length < 6) {
-      alert('Lütfen adınızı girin ve şifrenizin en az 6 karakter olduğuna emin olun.');
+      toast.error('Lütfen adınızı girin ve şifrenizin en az 6 karakter olduğuna emin olun.');
       return;
     }
 
@@ -59,10 +60,10 @@ const AcceptInvite: React.FC = () => {
           navigate('/login');
         }, 2000);
       } else {
-        alert(data.message || 'Kayıt sırasında bir hata oluştu.');
+        toast.error(data.message || 'Kayıt sırasında bir hata oluştu.');
       }
     } catch (err) {
-      alert('Sunucu hatası.');
+      toast.error('Sunucu hatası.');
     }
     setSubmitting(false);
   };

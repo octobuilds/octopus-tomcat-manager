@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search, Plus, Server, Terminal, Trash2, X, Save } from 'lucide-react';
@@ -65,11 +66,11 @@ const Servers: React.FC = () => {
         setServers(servers.filter(s => s.id !== id));
         fetchLimits();
       } else {
-        alert(data.message || 'Silinemedi');
+        toast.error(data.message || 'Silinemedi');
       }
     } catch (err) {
       console.error(err);
-      alert('Bağlantı hatası');
+      toast.error('Bağlantı hatası');
     }
   };
 
@@ -94,10 +95,10 @@ const Servers: React.FC = () => {
         setEditingServer(null);
         fetchServers();
       } else {
-        alert(data.message || 'Güncellenemedi');
+        toast.error(data.message || 'Güncellenemedi');
       }
     } catch (err) {
-      alert('Bağlantı hatası');
+      toast.error('Bağlantı hatası');
     } finally {
       setSaving(false);
     }

@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Coffee, MoreVertical, Cpu, AlertTriangle, Search, Play, Square, FileText, BarChart2, Edit, X, Plus } from 'lucide-react';
@@ -117,12 +118,12 @@ const TomcatApps: React.FC = () => {
               try {
                 const res = await fetch('/api/tomcat/scan', { method: 'POST' });
                 if (res.ok) {
-                  alert('Tarama başlatıldı! Birkaç saniye sürebilir.');
+                  toast.success('Tarama başlatıldı! Birkaç saniye sürebilir.');
                   setTimeout(() => fetchApps(), 3000); // refresh after 3 seconds
                 }
               } catch (err) {
                 console.error(err);
-                alert('Tarama başlatılamadı!');
+                toast.error('Tarama başlatılamadı!');
               }
             }}
             style={{

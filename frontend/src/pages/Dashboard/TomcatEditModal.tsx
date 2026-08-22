@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import { X, Coffee } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -38,11 +39,11 @@ const TomcatEditModal = ({ app, onClose, onUpdate }) => {
         if (onUpdate) onUpdate(updatedApp);
         onClose();
       } else {
-        alert("Güncelleme başarısız oldu.");
+        toast.success("Güncelleme başarısız oldu.");
       }
     } catch (error) {
       console.error("Error updating app", error);
-      alert("Bağlantı hatası.");
+      toast.error("Bağlantı hatası.");
     }
   };
 
