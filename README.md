@@ -1,7 +1,11 @@
 <div align="center">
-  <a href="https://octopusapm.com/">
-    <img src="frontend/public/logo.png" alt="Octopus APM Logo" width="600" />
-  </a>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><a href="https://octopusapm.com/"><img src="frontend/public/logo.png" alt="Octopus APM Logo" height="90" /></a></td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td><a href="https://octopusapm.com/"><b><font size="7" color="#4A6FE8">OctopusAPM</font></b></a></td>
+    </tr>
+  </table>
   <br />
 
   ![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED)
