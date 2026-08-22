@@ -1,10 +1,19 @@
-# 🐙 Octopus Tomcat APM
+<div align="center">
+  <a href="https://octopusapm.com/">
+    <img src="frontend/public/logo.png" alt="Octopus APM Logo" height="120" />
+  </a>
 
-![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED)
-![Docker Image Version](https://img.shields.io/docker/v/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+  # 🐙 Octopus Tomcat APM
 
-A modern, Dockerized Application Performance Monitoring (APM) and management dashboard tailored specifically for Apache Tomcat servers.
+  ![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED)
+  ![Docker Image Version](https://img.shields.io/docker/v/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker)
+  ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+
+  <p><b>A modern, Dockerized Application Performance Monitoring (APM) and management dashboard tailored specifically for Apache Tomcat servers.</b></p>
+</div>
+
+---
+
 
 Octopus APM provides real-time log tailing, metric monitoring, automated background services, and an interactive setup wizard with a sleek React-based user interface.
 
