@@ -1,0 +1,252 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("ADMIN")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  twoFactorSecret    String?
+  isTwoFactorEnabled Boolean  @default(false)
+  isFirstLogin       Boolean  @default(false)
+  sessions           Session[]
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  token     String   @unique
+  device    String?
+  ip        String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model UserInvite {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  token     String   @unique
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+}
+
+model PasswordReset {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Role {
+  id               Int      @id @default(autoincrement())
+  name             String   @unique
+  description      String?
+  canViewLogs      Boolean  @default(false)
+  canViewCharts    Boolean  @default(false)
+  canStartStopApps Boolean  @default(false)
+  canEditApps      Boolean  @default(false)
+  canManageUsers   Boolean  @default(false)
+  canManageRoles   Boolean  @default(false)
+  canManageServers Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Server {
+  id          Int       @id @default(autoincrement())
+  serverIp    String?   
+  serverName  String    
+  environment String?   // "production", "staging", vs.
+  os          String?   // İşletim Sistemi (Örn: Ubuntu 22.04)
+  description String?
+  isActive    Boolean   @default(true)
+  team        String?   // Sorumlu ekip
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  projects            Project[] 
+  healthMetric        ServerHealthMetric?
+  healthHistory       ServerHealthHistory[]
+}
+
+model ServerHealthMetric {
+  id                  Int      @id @default(autoincrement())
+  serverId            Int      @unique
+  server              Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  
+  hostname            String?
+  cpuUsagePercent     Float?
+  cpuCores            Int?
+  loadAvg1min         Float?
+  loadAvg5min         Float?
+  loadAvg15min        Float?
+  
+  memTotalMb          Float?
+  memUsedMb           Float?
+  memFreeMb           Float?
+  memUsagePercent     Float?
+  
+  swapTotalMb         Float?
+  swapUsedMb          Float?
+  swapUsagePercent    Float?
+  
+  diskTotalGb         Float?
+  diskUsedGb          Float?
+  diskFreeGb          Float?
+  diskUsagePercent    Float?
+  
+  netRxMb             Float?
+  netTxMb             Float?
+  
+  status              String?  
+  
+  diskMountPoint      String?
+  diskPartitions      Json?
+  topPaths            Json?
+  
+  updatedAt           DateTime @updatedAt
+}
+
+model ServerHealthHistory {
+  id                  Int      @id @default(autoincrement())
+  serverId            Int
+  server              Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  
+  cpuUsagePercent     Float?
+  memUsagePercent     Float?
+  diskUsagePercent    Float?
+  
+  diskMountPoint      String?
+  diskPartitions      Json?
+  topPaths            Json?
+  
+  status              String?
+  
+  recordedAt          DateTime @default(now())
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  name        String
+  apiKey      String   @unique @default(uuid())
+  
+  serverId    Int?     
+  server      Server?  @relation(fields: [serverId], references: [id])
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model LogEvent {
+  id          Int      @id @default(autoincrement())
+  projectId   Int?
+  level       String   
+  message     String
+  metaData    Json?    
+  count       Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt @default(now())
+}
+
+model AuditLog {
+  id          Int      @id @default(autoincrement())
+  userId      Int?
+  userEmail   String?
+  action      String   
+  details     String?  
+  ip          String?
+  createdAt   DateTime @default(now())
+}
+
+model TomcatApp {
+  id              Int      @id @default(autoincrement())
+  serverIp        String?  @map("server_ip")
+  instanceName    String   @map("instance_name")
+  userName        String?  @map("user_name")
+  pid             Int?
+  catalinaBase    String?  @map("catalina_base")
+  catalinaHome    String?  @map("catalina_home")
+  httpPort        String?  @map("http_port")
+  javaBin         String?  @map("java_bin")
+  startScript     String?  @map("start_script")
+  stopScript      String?  @map("stop_script")
+  cpuPercent      Float?   @map("cpu_percent")
+  rssMb           Float?   @map("rss_mb")
+  vszMb           Float?   @map("vsz_mb")
+  uptimeSec       Int?     @map("uptime_sec")
+  status          String   @default("stopped")
+  lastUpdated     DateTime @updatedAt @map("last_updated")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  history         TomcatAppHistory[]
+
+  @@unique([serverIp, instanceName])
+  @@map("TomcatApp")
+}
+
+model TomcatAppHistory {
+  id              Int      @id @default(autoincrement())
+  tomcatAppId     Int      @map("tomcat_app_id")
+  cpuPercent      Float?   @map("cpu_percent")
+  rssMb           Float?   @map("rss_mb")
+  vszMb           Float?   @map("vsz_mb")
+  uptimeSec       Int?     @map("uptime_sec")
+  status          String   @default("stopped")
+  recordedAt      DateTime @default(now()) @map("recorded_at")
+
+  app             TomcatApp @relation(fields: [tomcatAppId], references: [id], onDelete: Cascade)
+
+  @@index([tomcatAppId, recordedAt])
+  @@map("TomcatAppHistory")
+}
+
+model AlarmRule {
+  id           Int      @id @default(autoincrement())
+  name         String
+  targetType   String   @default("SERVER") // "SERVER" veya "TOMCAT"
+  targetId     Int?     // Belirli bir sunucu içinse ID, tüm sunucular içinse null
+  metric       String   // "cpu", "ram", "disk", "heap"
+  operator     String   // ">", "<", "=="
+  threshold    Float
+  durationSecs Int      @default(0) // Ne kadar süre bu durumda kalırsa tetiklenecek
+  action       String   @default("EMAIL")
+  actionTarget String?  // E-posta adresi
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model SystemSettings {
+  id        Int      @id @default(1)
+  
+  // Basic SMTP
+  smtpHost  String?
+  smtpPort  Int?
+  smtpUser  String?
+  smtpPass  String?
+  
+  // OAuth2 SMTP
+  authType          String   @default("BASIC") // "BASIC", "GOOGLE_OAUTH", "MICROSOFT_OAUTH"
+  oauthClientId     String?
+  oauthClientSecret String?
+  oauthRefreshToken String?
+
+  // License
+  licenseKey        String?  @db.Text
+
+  updatedAt DateTime @updatedAt
+}
+

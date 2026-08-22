@@ -1,0 +1,411 @@
+{
+  "setup": {
+    "welcome": {
+      "title": "Octopus APM'e Hoş Geldiniz",
+      "subtitle": "Uygulama Performans İzleme aracınızın kurulumuna başlayalım.",
+      "description": "Bu sihirbaz, APM sisteminizin düzgün çalışması için gereken temel ayarları yapmanıza yardımcı olacaktır. Başlamadan önce aşağıdaki bilgilere sahip olduğunuzdan emin olun:",
+      "req1": "Veritabanı bağlantı bilgileri (PostgreSQL/MySQL)",
+      "req2": "E-posta bildirimleri için SMTP sunucu bilgileri",
+      "req3": "Sistem yöneticisi için kullanılacak e-posta adresi",
+      "button": "Kuruluma Başla"
+    },
+    "database": {
+      "title": "Veritabanı Ayarları",
+      "subtitle": "APM metriklerinin kaydedileceği veritabanı bilgilerini girin.",
+      "host": "Sunucu Adresi (Host)",
+      "hostPlaceholder": "localhost veya ip adresi",
+      "port": "Port",
+      "portPlaceholder": "5432",
+      "dbName": "Veritabanı Adı",
+      "dbNamePlaceholder": "apm_db",
+      "user": "Kullanıcı Adı",
+      "userPlaceholder": "postgres",
+      "pass": "Şifre",
+      "passPlaceholder": "••••••••"
+    },
+    "smtp": {
+      "title": "SMTP Ayarları",
+      "subtitle": "Sistem uyarıları ve bildirimler için e-posta sunucunuzu yapılandırın.",
+      "host": "SMTP Sunucusu",
+      "hostPlaceholder": "smtp.example.com",
+      "port": "Port",
+      "portPlaceholder": "587 veya 465",
+      "user": "Kullanıcı Adı (E-posta)",
+      "userPlaceholder": "alerts@example.com",
+      "pass": "Şifre",
+      "passPlaceholder": "••••••••"
+    },
+    "admin": {
+      "title": "Yönetici Hesabı",
+      "subtitle": "APM paneline erişmek için ilk admin hesabını oluşturun.",
+      "email": "Yönetici E-posta",
+      "emailPlaceholder": "admin@example.com",
+      "pass": "Şifre",
+      "passPlaceholder": "Güçlü bir şifre belirleyin"
+    },
+    "success": {
+      "processingTitle": "Sistem Yapılandırılıyor",
+      "processingSubtitle": "Lütfen bekleyin, sistem ayarlarınız yapılandırılıyor...",
+      "successTitle": "Kurulum Tamamlandı!",
+      "successSubtitle": "OctopusAPM başarıyla yapılandırıldı. Artık sisteminizi izlemeye başlayabilirsiniz.",
+      "credentialsTitle": "Giriş Bilgileriniz",
+      "credentialsEmail": "E-posta:",
+      "credentialsPass": "Şifre:",
+      "credentialsWarning": "* Sisteme giriş yaptığınızda güvenlik amacıyla bu şifreyi değiştirmeniz istenecektir.",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "button": "Dashboard'a Git",
+      "steps": {
+        "connecting": "Veritabanı bağlantısı kuruluyor...",
+        "tables": "Gerekli tablolar oluşturuluyor...",
+        "settings": "Yapılandırma ayarları diske yazılıyor...",
+        "finishing": "Son kontroller yapılıyor..."
+      }
+    },
+    "common": {
+      "next": "İleri",
+      "prev": "Geri",
+      "finish": "Kurulumu Tamamla",
+      "stepWelcome": "Hoş Geldiniz",
+      "stepDatabase": "Veritabanı",
+      "stepSmtp": "SMTP Ayarları",
+      "stepAdmin": "Yönetici",
+      "stepSuccess": "Tamamlandı",
+      "optional": "(İsteğe Bağlı)",
+      "skip": "Atla"
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "overview": "Genel Bakış",
+      "serverManagement": "Sunucu Yönetimi",
+      "myServers": "Sunucularım",
+      "systemHealth": "Sistem Sağlığı",
+      "addServer": "Sunucu Ekle",
+      "runtimeManagement": "Runtime Yönetimi",
+      "tomcatApplications": "Tomcat Uygulamaları",
+      "traces": "Loglar (Traces)",
+      "settings": "Ayarlar",
+      "logout": "Çıkış Yap",
+      "systemManagement": "Sistem Yönetimi",
+      "users": "Kullanıcılar",
+      "roles": "Rol Yönetimi"
+    },
+    "overview": {
+      "title": "Genel Bakış",
+      "subtitle": "Sistem durumunuzun ve performans metriklerinizin özeti.",
+      "metrics": {
+        "activeServers": "Aktif Sunucular",
+        "avgResponseTime": "Ortalama Yanıt Süresi",
+        "errorRate": "Hata Oranı",
+        "requestsPerMin": "İstek / Dakika"
+      },
+      "recentEvents": "Son Olaylar & Uyarılar",
+      "systemLoad": "Son 7 Günlük Trafik (Req/s)",
+      "quickStatus": "Sistem Modülleri"
+    },
+    "servers": {
+      "title": "Sunucularım",
+      "subtitle": "İzlenen tüm sunucularınızı yönetin ve durumlarını anlık takip edin.",
+      "searchPlaceholder": "Sunucu adı veya IP adresi ara...",
+      "addServerBtn": "Yeni Sunucu Ekle",
+      "statusActive": "Bağlı",
+      "statusOffline": "Bağlantı Yok",
+      "status": "Durum",
+      "serverName": "Sunucu Adı",
+      "ipAddress": "IP Adresi",
+      "environment": "Ortam",
+      "os": "İşletim Sistemi",
+      "team": "Ekip",
+      "description": "Açıklama",
+      "actions": "İşlemler",
+      "addedDate": "Eklenme Tarihi",
+      "detailsBtn": "Yönet",
+      "editModal": {
+        "title": "Sunucuyu Düzenle",
+        "subtitle": "Sunucu yapılandırmasını ve etiketlerini güncelleyin",
+        "ipAddress": "IP Adresi (Değiştirilemez)",
+        "serverName": "Sunucu Adı",
+        "environment": "Ortam Etiketi",
+        "envPlaceholder": "Örn: Production, Staging",
+        "team": "Sorumlu Ekip",
+        "teamPlaceholder": "Örn: Backend Team",
+        "description": "Açıklama",
+        "descPlaceholder": "Sunucu hakkında kısa bir açıklama veya not ekleyin...",
+        "cancel": "İptal Et",
+        "saving": "Kaydediliyor...",
+        "save": "Değişiklikleri Kaydet"
+      }
+    },
+    "addServer": {
+      "title": "Sunucu Ekle",
+      "subtitle": "Yeni bir sunucuyu izleme ağına dahil edin.",
+      "form": {
+        "serverName": "Sunucu Adı",
+        "ipAddress": "IP / Host Adresi",
+        "port": "SSH Portu",
+        "username": "Kullanıcı Adı",
+        "authMethod": "Kimlik Doğrulama",
+        "authPassword": "Şifre ile",
+        "authKey": "SSH Key ile",
+        "password": "Şifre",
+        "sshKey": "SSH Private Key",
+        "submitBtn": "Sunucuyu Ekle",
+        "cancelBtn": "İptal"
+      }
+    },
+    "settings": {
+      "title": "Ayarlar",
+      "subtitle": "Kullanıcı hesabınızı ve APM tercihlerinizi yönetin.",
+      "tabs": {
+        "general": "Genel",
+        "notifications": "Bildirimler",
+        "security": "Güvenlik"
+      },
+      "general": {
+        "language": "Uygulama Dili",
+        "theme": "Görünüm Teması",
+        "timezone": "Saat Dilimi",
+        "saveBtn": "Değişiklikleri Kaydet"
+      },
+      "notifications": {
+        "title": "SMTP ve E-posta Ayarları",
+        "desc": "Sistem uyarıları ve e-posta bildirimleri için SMTP sunucu bilgilerinizi buradan güncelleyebilirsiniz.",
+        "host": "SMTP Sunucusu (Host)",
+        "port": "SMTP Portu",
+        "user": "E-posta Adresi",
+        "pass": "Şifre",
+        "saveBtn": "SMTP Ayarlarını Kaydet"
+      }
+    },
+    "tomcatApps": {
+      "title": "Tomcat Uygulamaları",
+      "scanNow": "Yenile",
+      "scanning": "Taranıyor...",
+      "subtitle": "İzlenen tüm Java (Tomcat) tabanlı web uygulamalarının durumu ve anlık bellek tüketimi.",
+      "addBtn": "Uygulama Ekle",
+      "searchPlaceholder": "Uygulama veya sunucu ara...",
+      "columns": {
+        "app": "Uygulama Adı",
+        "server": "Sunucu",
+        "status": "Durum",
+        "heap": "Heap Bellek",
+        "threads": "Aktif Thread",
+        "actions": "İşlemler"
+      },
+      "metrics": {
+        "total": "Toplam Uygulama",
+        "active": "Aktif",
+        "warning": "Uyarı",
+        "stopped": "Durdurulmuş"
+      },
+      "emptyState": {
+        "title": "Henüz uygulama bulunamadı",
+        "desc": "Şu an izlenen herhangi bir Tomcat uygulaması yok veya arama kriterinize uygun sonuç bulunamadı."
+      },
+      "status": {
+        "running": "Çalışıyor",
+        "stopped": "Durdu"
+      },
+      "editTitle": "Uygulamayı Düzenle",
+      "instanceName": "Örnek Adı (Instance Name)",
+      "catalinaBase": "Catalina Base Yolu",
+      "serverIp": "Sunucu IP",
+      "startScript": "Başlatma Betiği",
+      "stopScript": "Durdurma Betiği",
+      "cancel": "İptal",
+      "save": "Kaydet",
+      "saveBtn": "Kaydet",
+      "cancelBtn": "İptal"
+    },
+    "systemHealth": {
+      "title": "Sistem Sağlığı",
+      "subtitle": "Sunucularınızın anlık CPU, RAM, Disk ve Ağ durumunu izleyin.",
+      "summary": {
+        "totalServers": "Toplam Sunucu",
+        "healthy": "Normal",
+        "warnings": "Uyarı",
+        "critical": "Kritik (Acil)"
+      },
+      "searchPlaceholder": "Sunucu Ara...",
+      "metrics": {
+        "cpu": "CPU Kullanımı",
+        "ram": "Bellek (RAM)",
+        "disk": "Disk Alanı",
+        "network": "Ağ Trafiği",
+        "uptime": "Uptime",
+        "load": "Yük (Load Avg)"
+      },
+      "node": "Sunucu Seçiniz:"
+    },
+    "serverHealthDetail": {
+      "backBtn": "Geri Dön",
+      "serverTitle": "Sunucu (ID: {{id}})",
+      "cpuHistory": "CPU Kullanım Geçmişi (%)",
+      "ramHistory": "RAM Kullanım Geçmişi (%)",
+      "diskHistory": "Disk Kullanım Geçmişi (%)",
+      "loading": "Yükleniyor...",
+      "lastUpdated": "Son Güncelleme",
+      "diskPartitions": "Disk Bölümleri",
+      "mountPoint": "Bağlama Noktası (Mount)",
+      "usage": "Kullanım",
+      "topPaths": "En Çok Alan Kaplayan Dizinler (Top 10)",
+      "path": "Dizin Yolu",
+      "size": "Boyut",
+      "timeRange": {
+        "15m": "15 Dakika",
+        "1h": "1 Saat",
+        "6h": "6 Saat",
+        "24h": "24 Saat",
+        "custom": "Özel Tarih"
+      }
+    },
+    "users": {
+      "title": "Kullanıcılar",
+      "subtitle": "Sisteme erişimi olan kullanıcıları yönetin.",
+      "addBtn": "Kullanıcı Davet Et",
+      "statusActive": "Aktif",
+      "unnamedUser": "İsimsiz Kullanıcı",
+      "editRoleBtn": "Rolü Düzenle",
+      "deleteUserBtn": "Kullanıcıyı Sil",
+      "searchPlaceholder": "Kullanıcı ara...",
+      "modal": {
+        "inviteTitle": "Kullanıcı Davet Et",
+        "emailLabel": "E-posta Adresi",
+        "emailPlaceholder": "ornek@sirket.com",
+        "roleLabel": "Rol",
+        "inviteBtn": "Davet Linki Üret",
+        "invitingBtn": "Davet Oluşturuluyor...",
+        "successTitle": "Davet Linki Hazır!",
+        "successDesc": "Aşağıdaki linki kopyalayıp kullanıcıya gönderin. Kullanıcı linke tıklayarak kendi şifresini belirleyebilir.",
+        "copied": "Kopyalandı",
+        "copy": "Kopyala",
+        "editRoleTitle": "Rolü Düzenle",
+        "newRoleLabel": "Yeni Rol",
+        "saveBtn": "Kaydet",
+        "savingBtn": "Güncelleniyor..."
+      }
+    },
+    "roles": {
+      "title": "Roller",
+      "subtitle": "Kullanıcı yetkilerini ve rollerini yapılandırın.",
+      "addBtn": "Rol Ekle",
+      "editBtn": "Yetkileri Düzenle →",
+      "usersCount": "Kullanıcı",
+      "noDescription": "Açıklama yok",
+      "modal": {
+        "addTitle": "Yeni Rol Ekle",
+        "editTitle": "Yetkileri Düzenle: {{name}}",
+        "roleName": "Rol Adı",
+        "roleNamePlaceholder": "Örn: Sistem Yöneticisi",
+        "description": "Açıklama",
+        "descPlaceholder": "Bu rolün yetkilerini kısaca açıklayın...",
+        "permissions": "İzinler (Permissions)",
+        "cancel": "İptal",
+        "save": "Kaydet",
+        "canViewLogs": "Uygulama Loglarını Görebilir",
+        "canViewCharts": "Grafikleri Görebilir",
+        "canStartStopApps": "Uygulamaları Başlat/Durdur Yapabilir",
+        "canEditApps": "Sunucu/Uygulama Ayarlarını Düzenleyebilir",
+        "canManageUsers": "Kullanıcıları Yönetebilir",
+        "canManageRoles": "Rolleri Yönetebilir",
+        "canManageServers": "Sunucuları Yönetebilir"
+      }
+    },
+    "logs": {
+      "title": "Merkezi Log Görüntüleyici (APM Logs)",
+      "subtitle": "Sistem genelindeki tüm uygulama ve hata loglarını buradan izleyin.",
+      "searchPlaceholder": "Log mesajlarında ara...",
+      "allLevels": "Tüm Seviyeler",
+      "firstSeen": "İLK GÖRÜLME",
+      "lastSeen": "SON GÖRÜLME",
+      "level": "SEVİYE",
+      "count": "TEKRAR",
+      "message": "MESAJ",
+      "loading": "Yükleniyor...",
+      "emptyState": "Veritabanında henüz APM log kaydı bulunmuyor."
+    },
+    "alarms": {
+      "title": "Alarm Yönetimi",
+      "subtitle": "Metrikler için uyarı eşikleri belirleyin ve bildirim alın.",
+      "addBtn": "Yeni Alarm Ekle",
+      "searchPlaceholder": "Alarm ara...",
+      "table": {
+        "name": "Alarm Adı",
+        "target": "Hedef",
+        "condition": "Koşul",
+        "action": "Aksiyon (Bildirim)",
+        "status": "Durum",
+        "actions": "İşlemler"
+      },
+      "modal": {
+        "addTitle": "Alarm Oluştur",
+        "editTitle": "Alarmı Düzenle",
+        "name": "Alarm Adı",
+        "namePlaceholder": "Örn: Yüksek CPU Uyarısı",
+        "targetType": "Hedef Tipi",
+        "targetTypeServer": "Sunucu",
+        "targetTypeTomcat": "Tomcat",
+        "targetId": "Hangi Sunucu?",
+        "allServers": "Tüm Sunucular",
+        "metric": "İzlenecek Metrik",
+        "metricCpu": "CPU Kullanımı (%)",
+        "metricRam": "RAM Kullanımı (%)",
+        "metricDisk": "Disk Kullanımı (%)",
+        "metricServerStatus": "Sunucu Durumu (Down / Offline)",
+        "metricTomcatCpu": "Tomcat CPU Kullanımı (%)",
+        "metricTomcatRam": "Tomcat RAM Kullanımı (MB)",
+        "metricTomcatStatus": "Tomcat Durumu (Down / Stopped)",
+        "operator": "Koşul",
+        "operatorGt": "Büyüktür (>)",
+        "operatorLt": "Küçüktür (<)",
+        "operatorEq": "Eşittir (==)",
+        "threshold": "Eşik Değeri",
+        "thresholdPlaceholder": "Örn: 80",
+        "duration": "Süre (Saniye)",
+        "durationPlaceholder": "Örn: 60 (1 dk boyunca sürerse tetikle)",
+        "action": "Aksiyon",
+        "actionEmail": "E-posta Gönder",
+        "actionTarget": "E-posta Adresi",
+        "actionTargetPlaceholder": "admin@example.com",
+        "status": "Aktif / Pasif",
+        "statusDown": "DOWN / OFFLINE",
+        "cancel": "İptal",
+        "save": "Kaydet"
+      }
+    }
+  },
+  "logs": {
+    "title": "Sistem Logları & Denetim",
+    "subtitle": "Kullanıcı hareketleri, uyarılar ve sistem olaylarını anlık olarak izleyin."
+  },
+  "auth": {
+    "login": {
+      "title": "OctopusAPM'e Giriş Yap",
+      "subtitle": "Sistemlerinizi izlemeye başlamak için oturum açın.",
+      "email": "E-Posta Adresi",
+      "password": "Şifre",
+      "forgot": "Şifremi Unuttum?",
+      "loading": "Giriş Yapılıyor...",
+      "submit": "Giriş Yap",
+      "secureLogin": "Güvenli Bağlantı (SSL)"
+    },
+    "forgotPassword": {
+      "title": "Şifremi Unuttum",
+      "subtitle": "E-posta adresinizi girin, size bir sıfırlama bağlantısı gönderelim.",
+      "email": "E-Posta Adresi",
+      "submit": "Sıfırlama Linki Gönder",
+      "loading": "Gönderiliyor...",
+      "backToLogin": "Giriş Sayfasına Dön"
+    },
+    "resetPassword": {
+      "title": "Yeni Şifre Belirle",
+      "subtitle": "Lütfen hesabınız için yeni bir şifre girin.",
+      "newPassword": "Yeni Şifre",
+      "confirmPassword": "Şifre (Tekrar)",
+      "submit": "Şifreyi Güncelle",
+      "loading": "Sıfırlanıyor...",
+      "redirecting": "Giriş sayfasına yönlendiriliyorsunuz..."
+    }
+  }
+}

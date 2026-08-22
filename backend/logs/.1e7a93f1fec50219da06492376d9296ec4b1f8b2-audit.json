@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\furka\\Desktop\\proje\\apm\\backend\\logs\\.1e7a93f1fec50219da06492376d9296ec4b1f8b2-audit.json",
+    "files": [
+        {
+            "date": 1787433371784,
+            "name": "C:\\Users\\furka\\Desktop\\proje\\apm\\backend\\logs\\application-2026-08-23.log",
+            "hash": "20cef11c6c6267ea806bf31469c1cbf64e4b1cb0505e917503b8507dc0f79543"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: octopus_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: apm_tool
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  octopus-apm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: octopus_apm_app
+    restart: always
+    ports:
+      - "5000:5000" # Sol tarafı değiştirerek uygulamayı farklı bir porttan yayınlayabilirsiniz
+    environment:
+      - PORT=5000
+      - DB_USER=postgres
+      - DB_PASS=1234
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=apm_tool
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:

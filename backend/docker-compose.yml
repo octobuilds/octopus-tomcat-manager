@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: apm-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: apmuser
+      POSTGRES_PASSWORD: ApmGizliSifre123!
+      POSTGRES_DB: apm_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  apm-app:
+    build: .
+    container_name: octopus-apm
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - PORT=5000
+      - DATABASE_URL=postgresql://apmuser:ApmGizliSifre123!@db:5432/apm_db?schema=public
+
+volumes:
+  pgdata:

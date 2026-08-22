@@ -1,0 +1,411 @@
+{
+  "setup": {
+    "welcome": {
+      "title": "Welcome to Octopus APM",
+      "subtitle": "Let's get started with your Application Performance Monitoring tool setup.",
+      "description": "This wizard will help you configure the core settings needed for your APM system to function properly. Before we begin, make sure you have:",
+      "req1": "Database connection details (PostgreSQL/MySQL)",
+      "req2": "SMTP server details for email notifications",
+      "req3": "An email address to use for the system administrator",
+      "button": "Start Setup"
+    },
+    "database": {
+      "title": "Database Settings",
+      "subtitle": "Enter the database details where APM metrics will be stored.",
+      "host": "Server Address (Host)",
+      "hostPlaceholder": "localhost or ip address",
+      "port": "Port",
+      "portPlaceholder": "5432",
+      "dbName": "Database Name",
+      "dbNamePlaceholder": "apm_db",
+      "user": "Username",
+      "userPlaceholder": "postgres",
+      "pass": "Password",
+      "passPlaceholder": "••••••••"
+    },
+    "smtp": {
+      "title": "SMTP Settings",
+      "subtitle": "Configure your email server for system alerts and notifications.",
+      "host": "SMTP Server",
+      "hostPlaceholder": "smtp.example.com",
+      "port": "Port",
+      "portPlaceholder": "587 or 465",
+      "user": "Username (Email)",
+      "userPlaceholder": "alerts@example.com",
+      "pass": "Password",
+      "passPlaceholder": "••••••••"
+    },
+    "admin": {
+      "title": "Administrator Account",
+      "subtitle": "Create the first admin account to access the APM dashboard.",
+      "email": "Admin Email",
+      "emailPlaceholder": "admin@example.com",
+      "pass": "Password",
+      "passPlaceholder": "Set a strong password"
+    },
+    "success": {
+      "processingTitle": "Configuring System",
+      "processingSubtitle": "Please wait while your settings are being applied...",
+      "successTitle": "Setup Complete!",
+      "successSubtitle": "OctopusAPM has been successfully configured. You can now start monitoring your systems.",
+      "credentialsTitle": "Your Login Credentials",
+      "credentialsEmail": "Email:",
+      "credentialsPass": "Password:",
+      "credentialsWarning": "* You will be asked to change this password for security reasons upon your first login.",
+      "copy": "Copy",
+      "copied": "Copied",
+      "button": "Go to Dashboard",
+      "steps": {
+        "connecting": "Connecting to the database...",
+        "tables": "Creating necessary tables...",
+        "settings": "Writing configuration to disk...",
+        "finishing": "Performing final checks..."
+      }
+    },
+    "common": {
+      "next": "Next",
+      "prev": "Back",
+      "finish": "Complete Setup",
+      "stepWelcome": "Welcome",
+      "stepDatabase": "Database",
+      "stepSmtp": "SMTP Settings",
+      "stepAdmin": "Admin",
+      "stepSuccess": "Done",
+      "optional": "(Optional)",
+      "skip": "Skip"
+    }
+  },
+  "dashboard": {
+    "menu": {
+      "overview": "Overview",
+      "serverManagement": "Server Management",
+      "myServers": "My Servers",
+      "systemHealth": "Health Monitor",
+      "addServer": "Add Server",
+      "runtimeManagement": "Runtime Management",
+      "tomcatApplications": "Tomcat Applications",
+      "traces": "Traces (Logs)",
+      "settings": "Settings",
+      "logout": "Logout",
+      "systemManagement": "System Management",
+      "users": "Users",
+      "roles": "Roles"
+    },
+    "overview": {
+      "title": "Overview",
+      "subtitle": "Summary of your system status and performance metrics.",
+      "metrics": {
+        "activeServers": "Active Servers",
+        "avgResponseTime": "Avg Response Time",
+        "errorRate": "Error Rate",
+        "requestsPerMin": "Requests / Min"
+      },
+      "recentEvents": "Recent Events & Alerts",
+      "systemLoad": "Last 7 Days Traffic (Req/s)",
+      "quickStatus": "System Modules"
+    },
+    "servers": {
+      "title": "My Servers",
+      "subtitle": "Manage all monitored servers and track their status in real-time.",
+      "searchPlaceholder": "Search by server name or IP address...",
+      "addServerBtn": "Add New Server",
+      "statusActive": "Connected",
+      "statusOffline": "Disconnected",
+      "status": "Status",
+      "serverName": "Server Name",
+      "ipAddress": "IP Address",
+      "environment": "Environment",
+      "os": "Operating System",
+      "team": "Team",
+      "description": "Description",
+      "actions": "Actions",
+      "addedDate": "Added Date",
+      "detailsBtn": "Manage",
+      "editModal": {
+        "title": "Edit Server",
+        "subtitle": "Update server configuration and tags",
+        "ipAddress": "IP Address (Cannot be changed)",
+        "serverName": "Server Name",
+        "environment": "Environment Tag",
+        "envPlaceholder": "e.g., Production, Staging",
+        "team": "Responsible Team",
+        "teamPlaceholder": "e.g., Backend Team",
+        "description": "Description",
+        "descPlaceholder": "Add a short description or note about the server...",
+        "cancel": "Cancel",
+        "saving": "Saving...",
+        "save": "Save Changes"
+      }
+    },
+    "addServer": {
+      "title": "Add Server",
+      "subtitle": "Add a new server to your monitoring network.",
+      "form": {
+        "serverName": "Server Name",
+        "ipAddress": "IP / Host Address",
+        "port": "SSH Port",
+        "username": "Username",
+        "authMethod": "Authentication",
+        "authPassword": "Password",
+        "authKey": "SSH Key",
+        "password": "Password",
+        "sshKey": "SSH Private Key",
+        "submitBtn": "Add Server",
+        "cancelBtn": "Cancel"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your user account and APM preferences.",
+      "tabs": {
+        "general": "General",
+        "notifications": "Notifications",
+        "security": "Security"
+      },
+      "general": {
+        "language": "Application Language",
+        "theme": "Theme Preference",
+        "timezone": "Timezone",
+        "saveBtn": "Save Changes"
+      },
+      "notifications": {
+        "title": "SMTP & Email Settings",
+        "desc": "Update your SMTP server configuration for system alerts and email notifications.",
+        "host": "SMTP Server (Host)",
+        "port": "SMTP Port",
+        "user": "Email Address",
+        "pass": "Password",
+        "saveBtn": "Save SMTP Settings"
+      }
+    },
+    "tomcatApps": {
+      "title": "Tomcat Applications",
+      "scanNow": "Scan Now",
+      "scanning": "Scanning...",
+      "subtitle": "Status and memory usage of all monitored Java (Tomcat) web applications.",
+      "addBtn": "Add Application",
+      "searchPlaceholder": "Search apps or servers...",
+      "columns": {
+        "app": "Application Name",
+        "server": "Server",
+        "status": "Status",
+        "heap": "Heap Memory",
+        "threads": "Active Threads",
+        "actions": "Actions"
+      },
+      "metrics": {
+        "total": "Total Apps",
+        "active": "Active",
+        "warning": "Warning",
+        "stopped": "Stopped"
+      },
+      "emptyState": {
+        "title": "No applications found yet",
+        "desc": "There are currently no Tomcat applications being monitored or no results match your search criteria."
+      },
+      "status": {
+        "running": "Running",
+        "stopped": "Stopped"
+      },
+      "editTitle": "Edit Application",
+      "instanceName": "Instance Name",
+      "catalinaBase": "Catalina Base Path",
+      "serverIp": "Server IP",
+      "startScript": "Start Script",
+      "stopScript": "Stop Script",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveBtn": "Save",
+      "cancelBtn": "Cancel"
+    },
+    "systemHealth": {
+      "title": "Health Monitor",
+      "subtitle": "Monitor real-time CPU, RAM, Disk, and Network status of your servers.",
+      "summary": {
+        "totalServers": "Total Servers",
+        "healthy": "Normal",
+        "warnings": "Warning",
+        "critical": "Critical"
+      },
+      "searchPlaceholder": "Search servers...",
+      "metrics": {
+        "cpu": "CPU Usage",
+        "ram": "Memory (RAM)",
+        "disk": "Disk Space",
+        "network": "Network Traffic",
+        "uptime": "Uptime",
+        "load": "Load Avg"
+      },
+      "node": "Select Server:"
+    },
+    "serverHealthDetail": {
+      "backBtn": "Go Back",
+      "serverTitle": "Server (ID: {{id}})",
+      "cpuHistory": "CPU Usage History (%)",
+      "ramHistory": "RAM Usage History (%)",
+      "diskHistory": "Disk Usage History (%)",
+      "loading": "Loading...",
+      "lastUpdated": "Last Updated",
+      "diskPartitions": "Disk Partitions",
+      "mountPoint": "Mount Point",
+      "usage": "Usage",
+      "topPaths": "Top Disk Hogs (Top 10)",
+      "path": "Directory Path",
+      "size": "Size",
+      "timeRange": {
+        "15m": "15 Minutes",
+        "1h": "1 Hour",
+        "6h": "6 Hours",
+        "24h": "24 Hours",
+        "custom": "Custom Date"
+      }
+    },
+    "users": {
+      "title": "Users",
+      "subtitle": "Manage users who have access to the system.",
+      "addBtn": "Invite User",
+      "statusActive": "Active",
+      "unnamedUser": "Unnamed User",
+      "editRoleBtn": "Edit Role",
+      "deleteUserBtn": "Delete User",
+      "searchPlaceholder": "Search users...",
+      "modal": {
+        "inviteTitle": "Invite User",
+        "emailLabel": "Email Address",
+        "emailPlaceholder": "example@company.com",
+        "roleLabel": "Role",
+        "inviteBtn": "Generate Invite Link",
+        "invitingBtn": "Generating Invite...",
+        "successTitle": "Invite Link Ready!",
+        "successDesc": "Copy the link below and send it to the user. The user can click the link to set their password.",
+        "copied": "Copied",
+        "copy": "Copy",
+        "editRoleTitle": "Edit Role",
+        "newRoleLabel": "New Role",
+        "saveBtn": "Save",
+        "savingBtn": "Saving..."
+      }
+    },
+    "roles": {
+      "title": "Roles",
+      "subtitle": "Configure user permissions and roles.",
+      "addBtn": "Add Role",
+      "editBtn": "Edit Permissions →",
+      "usersCount": "Users",
+      "noDescription": "No description",
+      "modal": {
+        "addTitle": "Add New Role",
+        "editTitle": "Edit Permissions: {{name}}",
+        "roleName": "Role Name",
+        "roleNamePlaceholder": "e.g., System Administrator",
+        "description": "Description",
+        "descPlaceholder": "Briefly describe the permissions of this role...",
+        "permissions": "Permissions",
+        "cancel": "Cancel",
+        "save": "Save",
+        "canViewLogs": "Can View Application Logs",
+        "canViewCharts": "Can View Charts",
+        "canStartStopApps": "Can Start/Stop Applications",
+        "canEditApps": "Can Edit Server/App Settings",
+        "canManageUsers": "Can Manage Users",
+        "canManageRoles": "Can Manage Roles",
+        "canManageServers": "Can Manage Servers"
+      }
+    },
+    "logs": {
+      "title": "Centralized Log Viewer (APM Logs)",
+      "subtitle": "Monitor all application and error logs across the system.",
+      "searchPlaceholder": "Search in log messages...",
+      "allLevels": "All Levels",
+      "firstSeen": "FIRST SEEN",
+      "lastSeen": "LAST SEEN",
+      "level": "LEVEL",
+      "count": "COUNT",
+      "message": "MESSAGE",
+      "loading": "Loading...",
+      "emptyState": "No APM log records found in the database yet."
+    },
+    "alarms": {
+      "title": "Alarm Management",
+      "subtitle": "Define alert thresholds for metrics and get notified.",
+      "addBtn": "Add New Alarm",
+      "searchPlaceholder": "Search alarms...",
+      "table": {
+        "name": "Alarm Name",
+        "target": "Target",
+        "condition": "Condition",
+        "action": "Action",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "modal": {
+        "addTitle": "Create Alarm",
+        "editTitle": "Edit Alarm",
+        "name": "Alarm Name",
+        "namePlaceholder": "e.g., High CPU Alert",
+        "targetType": "Target Type",
+        "targetTypeServer": "Server",
+        "targetTypeTomcat": "Tomcat",
+        "targetId": "Which Server?",
+        "allServers": "All Servers",
+        "metric": "Metric to Monitor",
+        "metricCpu": "CPU Usage (%)",
+        "metricRam": "RAM Usage (%)",
+        "metricDisk": "Disk Usage (%)",
+        "metricServerStatus": "Server Status (Down / Offline)",
+        "metricTomcatCpu": "Tomcat CPU Usage (%)",
+        "metricTomcatRam": "Tomcat RAM Usage (MB)",
+        "metricTomcatStatus": "Tomcat Status (Down / Stopped)",
+        "operator": "Condition",
+        "operatorGt": "Greater Than (>)",
+        "operatorLt": "Less Than (<)",
+        "operatorEq": "Equals (==)",
+        "threshold": "Threshold Value",
+        "thresholdPlaceholder": "e.g., 80",
+        "duration": "Duration (Seconds)",
+        "durationPlaceholder": "e.g., 60 (trigger if it stays for 1 min)",
+        "action": "Action",
+        "actionEmail": "Send Email",
+        "actionTarget": "Email Address",
+        "actionTargetPlaceholder": "admin@example.com",
+        "status": "Active / Inactive",
+        "statusDown": "DOWN / OFFLINE",
+        "cancel": "Cancel",
+        "save": "Save"
+      }
+    }
+  },
+  "logs": {
+    "title": "System Logs & Audit",
+    "subtitle": "Monitor user actions, alerts, and system events in real-time."
+  },
+  "auth": {
+    "login": {
+      "title": "Login to OctopusAPM",
+      "subtitle": "Sign in to start monitoring your systems.",
+      "email": "Email Address",
+      "password": "Password",
+      "forgot": "Forgot Password?",
+      "loading": "Signing in...",
+      "submit": "Sign In",
+      "secureLogin": "Secure Connection (SSL)"
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email address and we will send you a reset link.",
+      "email": "Email Address",
+      "submit": "Send Reset Link",
+      "loading": "Sending...",
+      "backToLogin": "Back to Login"
+    },
+    "resetPassword": {
+      "title": "Set New Password",
+      "subtitle": "Please enter a new password for your account.",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Update Password",
+      "loading": "Resetting...",
+      "redirecting": "Redirecting to login page..."
+    }
+  }
+}

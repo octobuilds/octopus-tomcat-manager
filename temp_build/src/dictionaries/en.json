@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "howItWorks": "How it Works?",
+    "pricing": "Packages",
+    "demo": "Demo",
+    "contact": "Contact Us",
+    "login": "Login"
+  },
+  "hero": {
+    "badge": "v1.0 is Live",
+    "title1": "Next Gen Watcher",
+    "title2": "For Servers & Tomcat",
+    "subtitle": "Connect in seconds with zero-agent architecture. Take control with live log streaming, continuous historical performance charts, and RBAC authorization.",
+    "btn": {
+      "demo": "Request a Demo",
+      "features": "Learn More"
+    }
+  },
+  "stats": {
+    "servers": "Servers Monitored",
+    "serversDesc": "Number of actively monitored servers.",
+    "logs": "Log Lines Processed",
+    "logsDesc": "Total number of log lines processed.",
+    "uptime": "Uptime",
+    "uptimeDesc": "System reliability."
+  },
+  "trusted": {
+    "title": "TRUSTED BY RELIABLE ORGANIZATIONS"
+  },
+  "cta": {
+    "title": "Take Control of Your Servers",
+    "subtitle": "Start monitoring your infrastructure in seconds with OctopusAPM. No installation required.",
+    "btn": "Request a Demo"
+  },
+  "features": {
+    "title": "Advanced Monitoring Capabilities",
+    "subtitle": "OctopusAPM brings together all the modern tools you need to ensure the health of your infrastructure in one platform.",
+    "items": [
+      {
+        "title": "Real-time Metrics",
+        "desc": "Track Server CPU, RAM, Disk usage, and Network traffic second by second."
+      },
+      {
+        "title": "Centralized Log Management",
+        "desc": "Collect all logs from your distributed systems on a single screen."
+      },
+      {
+        "title": "Smart Alert System",
+        "desc": "Get instant notifications via Email, Slack, or SMS."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "No surprise costs.",
+    "starter": {
+      "name": "STARTER",
+      "desc": "Ideal starting point for small teams and single projects.",
+      "price": "$49.00",
+      "features": ["Up to 5 Servers", "10 Tomcat Applications", "Advanced RBAC", "Live Log Monitoring"],
+      "disabledFeatures": ["24/7 Priority Support"],
+      "btn": "Start Now"
+    },
+    "pro": {
+      "badge": "Most Popular",
+      "name": "PRO",
+      "desc": "Full control for growing infrastructures and professional teams.",
+      "price": "$79.00",
+      "features": ["Up to 20 Servers", "Unlimited Tomcat Applications", "Advanced RBAC & Log Backup", "Slack & Email Integration", "Standard Email Support"],
+      "btn": "Start Now"
+    },
+    "advanced": {
+      "name": "ADVANCED",
+      "desc": "For large-scale operations and companies requiring custom installation.",
+      "price": "Custom Pricing",
+      "features": ["Unlimited Servers", "On-Premise (Your Server) Installation", "Custom Interface (White-label)", "SLA Guarantee", "24/7 Priority Phone Support"],
+      "btn": "Contact Us"
+    }
+  },
+  "footer": {
+    "product": "PRODUCT",
+    "company": "COMPANY",
+    "support": "SUPPORT",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy",
+    "releaseNotes": "Release Notes",
+    "rights": "All rights reserved."
+  }
+}

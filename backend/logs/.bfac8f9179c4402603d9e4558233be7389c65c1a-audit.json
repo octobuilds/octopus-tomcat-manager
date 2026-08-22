@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\furka\\Desktop\\proje\\apm\\backend\\logs\\.bfac8f9179c4402603d9e4558233be7389c65c1a-audit.json",
+    "files": [
+        {
+            "date": 1785678028478,
+            "name": "C:\\Users\\furka\\Desktop\\proje\\apm\\backend\\logs\\error-2026-08-02.log",
+            "hash": "4bc12fe53b234bb51d9c5a6a53c79b668bf0ed8277b5b03a6cd8a6aa3b1119ed"
+        },
+        {
+            "date": 1785826992796,
+            "name": "C:\\Users\\furka\\Desktop\\proje\\apm\\backend\\logs\\error-2026-08-04.log",
+            "hash": "45ea905aa0296dacb58b9c8469815ed5cb69569fe99213d2d399060f6c6c4f73"
+        },
+        {
+            "date": 1787433371798,
+            "name": "C:\\Users\\furka\\Desktop\\proje\\apm\\backend\\logs\\error-2026-08-23.log",
+            "hash": "9a35acaa1c94a03d636e3fb936f983a46320b34ce3031215b4704f91481a3fa6"
+        }
+    ],
+    "hashType": "sha256"
+}
