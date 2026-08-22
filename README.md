@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://octopusapm.com/">
-    <img src="frontend/public/banner.svg" alt="OctopusAPM" width="700" />
+    <img src="frontend/public/banner.png" alt="OctopusAPM" width="700" />
   </a>
   <br /><br />
 
