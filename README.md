@@ -1,7 +1,5 @@
 <div align="center">
-  <a href="https://octopusapm.com/">
-    <img src="frontend/public/banner.png" alt="OctopusAPM" width="300" />
-  </a>
+  [![OctopusAPM](frontend/public/banner.png)](https://octopusapm.com/)
   <br /><br />
 
   ![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED&cache=1)
