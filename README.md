@@ -14,22 +14,22 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 Octopus APM provides real-time log tailing, metric monitoring, automated background services, and an interactive setup wizard with a sleek React-based user interface. It simplifies Tomcat server management by offering a single, cohesive dashboard without the need for complex configuration files.
 
-## ✨ Key Features
+## Key Features
 
-- **📊 Real-Time Monitoring:** Track CPU, Memory, and JVM metrics of your Tomcat instances live via an intuitive dashboard.
-- **🛠️ Interactive Setup Wizard:** No complicated configuration files. Just run the container and set up your database via the UI on your first visit.
-- **📜 Live Log Tailing:** Read and search Tomcat logs (`catalina.out`, `localhost.log`, etc.) directly from your browser using ultra-fast WebSockets.
-- **🔐 Role-Based Access Control (RBAC):** Built-in `ADMIN` and `USER` roles for secure team collaboration. Easily manage who can view logs or change configurations.
-- **🚨 Automated Alarms:** Set custom thresholds and receive real-time toast alerts when server resources are constrained.
-- **🐳 Seamless Docker Integration:** Deploy anywhere in seconds. Built as a lightweight, multi-stage Alpine Docker image.
+- **Real-Time Monitoring:** Track CPU, Memory, and JVM metrics of your Tomcat instances live via an intuitive dashboard.
+- **Interactive Setup Wizard:** No complicated configuration files. Just run the container and set up your database via the UI on your first visit.
+- **Live Log Tailing:** Read and search Tomcat logs (`catalina.out`, `localhost.log`, etc.) directly from your browser using ultra-fast WebSockets.
+- **Role-Based Access Control (RBAC):** Built-in `ADMIN` and `USER` roles for secure team collaboration. Easily manage who can view logs or change configurations.
+- **Automated Alarms:** Set custom thresholds and receive real-time toast alerts when server resources are constrained.
+- **Seamless Docker Integration:** Deploy anywhere in seconds. Built as a lightweight, multi-stage Alpine Docker image.
 
 ---
 
-## 🚀 Quick Start (Docker)
+## Quick Start (Docker)
 
 You don't need to build the source code to use Octopus APM. The official pre-built Docker image is available on Docker Hub and contains everything you need.
 
@@ -89,7 +89,7 @@ http://localhost:5000
 
 ---
 
-## 🛠️ First Time Setup Wizard
+## First Time Setup Wizard
 
 When you launch the application for the first time, you will be greeted by the **Setup Wizard**.
 
@@ -104,7 +104,7 @@ When you launch the application for the first time, you will be greeted by the *
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 Our stack is chosen for maximum performance, security, and developer experience.
 
@@ -127,7 +127,7 @@ Our stack is chosen for maximum performance, security, and developer experience.
 
 ---
 
-## 🏗️ Development & Building from Source
+## Development & Building from Source
 
 If you want to contribute or build your own custom version of the Docker image, clone the repository and run the build command.
 
@@ -159,7 +159,7 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps to contribute:
 1. Fork the project.
@@ -168,6 +168,6 @@ We welcome contributions! Please follow these steps to contribute:
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**. See the LICENSE file for more details.
