@@ -4,9 +4,9 @@
   </a>
   <br /><br />
 
-  ![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED&cache=1)
-  ![Docker Image Version](https://img.shields.io/docker/v/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&cache=1)
-  ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+  [![Docker Pulls](https://img.shields.io/docker/pulls/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&color=2496ED&cache=1)](https://hub.docker.com/r/octobuilds/octopus-tomcat-manager)
+  [![Docker Image Version](https://img.shields.io/docker/v/octobuilds/octopus-tomcat-manager?style=for-the-badge&logo=docker&cache=1)](https://hub.docker.com/r/octobuilds/octopus-tomcat-manager)
+  [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](https://github.com/octobuilds/octopus-tomcat-manager)
 
   <p><b>A modern, Dockerized Application Performance Monitoring (APM) and management dashboard tailored specifically for Apache Tomcat servers.</b></p>
 </div>
