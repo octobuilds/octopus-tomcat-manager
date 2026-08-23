@@ -1,2 +1,9 @@
 *.zip
 
+
+vendor_backend/
+vendor_frontend/
+demo/
+make_banner.py
+frontend/image-removebg-preview.png
+frontend/refactor.mjs
